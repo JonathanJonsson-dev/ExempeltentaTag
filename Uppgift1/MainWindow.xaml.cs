@@ -24,5 +24,28 @@ namespace Uppgift1
         {
             InitializeComponent();
         }
+
+        private void btnOk_Click(object sender, RoutedEventArgs e)
+        {
+            int numberOfSeats = 16;
+            int seatNumber = int.Parse(txtBox.Text);
+            if (radioBtnAway.IsChecked == true & seatNumber > 0 & seatNumber <= (numberOfSeats / 2))
+            {
+                MessageBox.Show($"Sittplats nr {seatNumber} gör att du får åka framlänges");
+            }
+            if (radioBtnAway.IsChecked == true & seatNumber > (numberOfSeats / 2) & seatNumber <= numberOfSeats)
+            {
+                MessageBox.Show($"Sittplats nr {seatNumber} gör att du får åka baklänges");
+            }
+            if (radioBtHome.IsChecked == true & seatNumber > 0 & seatNumber <= (numberOfSeats / 2))
+            {
+                MessageBox.Show($"Sittplats nr {seatNumber} gör att du får åka baklänges");
+            }
+            if (radioBtHome.IsChecked == true & seatNumber > (numberOfSeats / 2) & seatNumber <= numberOfSeats)
+            {
+                MessageBox.Show($"Sittplats nr {seatNumber} gör att du får åka framlänges");
+            }
+
+        }
     }
 }
