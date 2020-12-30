@@ -32,7 +32,9 @@ namespace Uppgift2
             waggon.FillSeats();
             // Tågtenta lösningsförslag
             lstBox.ItemsSource = null;
-            lstBox.ItemsSource = waggon.Seats;
+            //lstBox.ItemsSource = waggon.Seats;
+            
+            lstBox.ItemsSource = waggon.GetFreeSeats(3);
 
         }
     }

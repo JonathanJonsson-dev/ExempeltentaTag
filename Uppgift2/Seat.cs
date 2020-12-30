@@ -14,11 +14,11 @@ namespace Uppgift2
         {
             if (IsTaken == true)
             {
-                return $"Plats {SeatNumber} är upptagen";
+                return $"Plats {SeatNumber}({Type}) är upptagen";
             }
             else
             {
-                return $"Plats {SeatNumber} är ledig";
+                return $"Plats {SeatNumber}({Type}) är ledig";
             }
             
         }

@@ -21,9 +21,22 @@ namespace Uppgift2
             {
                 Seat seat = new Seat();
                 seat.SeatNumber = i + 1;
+                seat.Type = SetType(seat);
                 Seats.Add(seat);
             }
             
+        }
+
+        public string SetType(Seat seat)
+        {
+            if (seat.SeatNumber % 2 == 0)
+            {
+                return "Gång";
+            }
+            else
+            {
+                return "Fönster";
+            }
         }
 
         public void FillSeats()
@@ -42,7 +55,22 @@ namespace Uppgift2
             }
         }
 
-        
+        public List<Seat> GetFreeSeats(int numberOfSeats)
+        {
+            int counter = 0;
+            List<Seat> freeSeats = new List<Seat>();
+            foreach (Seat seat in Seats)
+            {
+                if (seat.IsTaken != true & counter < numberOfSeats)
+                {
+                    freeSeats.Add(seat);
+                    counter++;
+                }
+
+            }
+
+            return freeSeats;
+        }
 
     }
 }
