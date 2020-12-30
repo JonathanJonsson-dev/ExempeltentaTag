@@ -102,5 +102,18 @@ namespace Uppgift2
             return freeSeatPair;
         }
 
+        public void Return(int[] seatNumber)
+        {
+            for (int i = 0; i < seatNumber.Length; i++)
+            {
+                foreach (Seat seat in Seats)
+                {
+                    if (seat.IsTaken == true & seat.SeatNumber == seatNumber[i])
+                    {
+                        seat.IsTaken = false;
+                    }
+                }
+            }
+        }
     }
 }

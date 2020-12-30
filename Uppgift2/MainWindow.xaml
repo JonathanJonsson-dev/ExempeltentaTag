@@ -11,6 +11,7 @@
         <ListBox x:Name="lstBox" Margin="41,58,495,100"/>
         <ListBox x:Name="lstBoxFreePair" Margin="445,64,91,106"/>
         <Label Content="Ledigt stolspar" HorizontalAlignment="Left" Margin="491,26,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnReturn" Click="btnReturn_Click" Content="Returnera biljetter" HorizontalAlignment="Left" Margin="464,389,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

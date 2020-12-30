@@ -25,10 +25,11 @@ namespace Uppgift2
             InitializeComponent();
         }
 
+        Waggon waggon = new Waggon(32);
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
-            Waggon waggon = new Waggon(32);
+            
             waggon.FillSeats();
             // Tågtenta lösningsförslag
             lstBox.ItemsSource = null;
@@ -39,6 +40,15 @@ namespace Uppgift2
 
             //lstBox.ItemsSource = waggon.GetFreeSeats(3);
 
+        }
+
+        private void btnReturn_Click(object sender, RoutedEventArgs e)
+        {
+            
+            int[] seatNumber = {1, 2, 3, 4};
+            waggon.Return(seatNumber);
+            lstBox.ItemsSource = null;
+            lstBox.ItemsSource = waggon.Seats;
         }
     }
 }
