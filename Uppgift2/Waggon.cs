@@ -69,7 +69,37 @@ namespace Uppgift2
 
             }
 
-            return freeSeats;
+            if (freeSeats.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return freeSeats;
+            }
+        }
+
+        public List<Seat> GetFreeSeatPair()
+        {
+            List<Seat> freeSeatPair = new List<Seat>();
+            //foreach (Seat seat in Seats)
+            //{
+            //    if (seat.SeatNumber % 2 != 0 & seat.IsTaken != true)
+            //    {
+            //        freeSeatPair.Add(seat);
+            //    } 
+            //}
+
+            for (int i = 0; i < Seats.Count - 1; i++)
+            {
+                if (Seats[i].SeatNumber % 2 != 0 & Seats[i].IsTaken != true & Seats[i + 1].IsTaken != true)
+                {
+                    freeSeatPair.Add(Seats[i]);
+                    freeSeatPair.Add(Seats[i + 1]);
+                }
+            }
+
+            return freeSeatPair;
         }
 
     }
